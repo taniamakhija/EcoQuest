@@ -23,6 +23,8 @@ struct ContentView: View {
             Text("Vianna Change HAHA")
             Text("new change - Tania")
             
+            Text("we went a merge conflict")
+            
             Text("test 2 lets figure this out")
             
             Text("Change 3")
