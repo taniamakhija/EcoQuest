@@ -14,6 +14,8 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world! - zoe")
+            Text("BYEEEEEE, world! vianna rulez")
+            
             Text("Change 1")
             HStack{
                 Text("HIIII")
