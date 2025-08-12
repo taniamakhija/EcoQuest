@@ -15,11 +15,15 @@ struct ContentView: View {
                 .foregroundStyle(.tint)
             Text("Hello, world!")
             Text("Change 1")
-            
+            HStack{
+                Text("HIIII")
+                    .font(.title)
+                Text("ok bru")
+            }
             Text("Vianna Change HAHA")
             Text("new change - Tania")
             
-            Text("hi test")
+            Text("test 2 lets figure this out")
         }
         .padding()
     }
