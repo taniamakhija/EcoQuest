@@ -13,6 +13,7 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
+            Text("Hello, world! - zoe")
             Text("BYEEEEEE, world! vianna rulez")
             Text("Change 1")
             HStack{
@@ -26,6 +27,8 @@ struct ContentView: View {
             Text("we went a merge conflict")
             
             Text("test 2 lets figure this out")
+            
+            Text("Change 3")
         }
         .padding()
     }
