@@ -86,6 +86,10 @@ struct Log_Page: View {
                                     .fontWeight(.bold)
                             }
                         }
+                        .frame(width: 300, height: 200)
+                        .background(Color.white)
+                        .cornerRadius(20)
+                        .shadow(radius: 10)
                         List {
                             ForEach (trashItems) { trashItem in
                                 Text(trashItem.title)
@@ -94,13 +98,6 @@ struct Log_Page: View {
                         }
                         .listStyle(.plain)
                     }
-                    if showTrash {
-                        
-                    }
-                    .frame(width: 300, height: 200)
-                    .background(Color.white)
-                    .cornerRadius(20)
-                    .shadow(radius: 10)
                 }
             }
         )
