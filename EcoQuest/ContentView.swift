@@ -91,7 +91,7 @@ struct ContentView: View {
                         .shadow(radius: 5)
                         .foregroundColor(.black)
                         .padding()
-            }
+                }
                 
                 
                 //learn page

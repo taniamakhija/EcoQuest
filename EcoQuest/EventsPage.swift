@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct EventsPage: View {
+    func addEvent(name: String, info: String) {
+        
+    }
     var body: some View {
         ZStack{
             Image("color")
@@ -44,12 +47,7 @@ struct EventsPage: View {
                     .opacity(0)
             }
             
-//            ZStack{
-//                RoundedRectangle(cornerRadius: 10)
-//                    .frame(width: 500, height: 900)
-//                    .opacity(0.50)
-//                    .colorInvert()
-//            }
+            
             
             
                 
@@ -69,6 +67,7 @@ struct EventsPage: View {
     .scrollContentBackground(.hidden)
     .ignoresSafeArea(edges: .top)
 }
+        .tint(.white)
         .toolbarBackground(.hidden, for: .navigationBar)
 }
 }
