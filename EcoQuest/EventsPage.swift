@@ -17,7 +17,7 @@ struct EventsPage: View {
             
             
     ScrollView{
-        VStack(){
+        VStack{
             
             ZStack(alignment: .top){
                 Image("b1")
@@ -33,18 +33,28 @@ struct EventsPage: View {
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
                     .bold()
-                    .padding(.top, 500)
-        } //title
+                    .padding(.top, 650.0)
+            } //title
+            .frame(height: 600.0)
             
             
-            ZStack(alignment: .top){
+            ZStack(){
                 RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 500.0, height: 700.0)
+                    .frame(width: 500.0, height: 400)
+                    .opacity(0)
             }
+            
+//            ZStack{
+//                RoundedRectangle(cornerRadius: 10)
+//                    .frame(width: 500, height: 900)
+//                    .opacity(0.50)
+//                    .colorInvert()
+//            }
+            
             
                 
         }
-        .padding(.bottom, 0)//end of vStack
+        .padding(.bottom, 2.0)//end of vStack
         
         .scrollTransition{content, phase in content
         .opacity(phase.isIdentity ? 1.0 :0.0)
@@ -55,7 +65,7 @@ struct EventsPage: View {
         }//end of scroll transition stuff
         
     }// end of scroll
-//    .background(Color.clear)
+    .background(Color.clear)
     .scrollContentBackground(.hidden)
     .ignoresSafeArea(edges: .top)
 }
