@@ -25,7 +25,7 @@ struct EventsPage: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: .infinity)
                 
-                Spacer()
+//                Spacer()
                 
             } //Background Image
             VStack{
@@ -42,25 +42,29 @@ struct EventsPage: View {
         } //title
 
 
-            Spacer()
-            
+//            Spacer()
+//            
             ZStack(alignment: .top){
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 500.0, height: 700.0)
             }
                 
         }//end of vStack
+        
         .scrollTransition{content, phase in content
         .opacity(phase.isIdentity ? 1.0 :0.0)
         .scaleEffect(x: phase.isIdentity ? 1.0 : 0.3,
                      y: phase.isIdentity ? 1.0 : 0.3)
         .offset(y: phase.isIdentity ? 0: 50)
+            
         }//end of scroll transition stuff
         
     }// end of scroll
-            
+//    .background(Color.clear)
+    .scrollContentBackground(.hidden)
     .ignoresSafeArea(edges: .top)
 }
+        .toolbarBackground(.hidden, for: .navigationBar)
 }
 }
 
