@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct Log_Page: View {
     @State private var showTrash = false
     @State private var showRecycling = false
     @State private var showCompost = false
+    @State var showNewTrash = false
+    @Query var trashItems: [TrashItem]
+    @Environment(\.modelContext) var modelContext
     var body: some View {
         ZStack {
             VStack {
@@ -56,16 +60,42 @@ struct Log_Page: View {
         .overlay(
             Group {
                 if showTrash {
-                    HStack {
-                        Button("<") {
-                            showTrash = false
+                    VStack {
+                        HStack {
+                            //back button
+                            Button {
+                                showTrash = false
+                            } label: {
+                                Text("<")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                            }
+                            //title
+                            Text("Trashed Items")
+                                .font(.headline)
+                                .fontWeight(.black)
+                                .padding()
+                            //add trash item button
+                            Button {
+                                withAnimation {
+                                    showNewTrash = true
+                                }
+                            } label: {
+                                Text("+")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                            }
                         }
-                        Text("Trashed Items")
-                            .font(.headline)
-                            .padding()
-    //                        Button("+") {
-    //
-    //                        }
+                        List {
+                            ForEach (trashItems) { trashItem in
+                                Text(trashItem.title)
+                            }
+                            .onDelete(perform: deleteTrash)
+                        }
+                        .listStyle(.plain)
+                    }
+                    if showTrash {
+                        
                     }
                     .frame(width: 300, height: 200)
                     .background(Color.white)
@@ -119,8 +149,15 @@ struct Log_Page: View {
             }
         )
     }
+    func deleteTrash(at offsets: IndexSet) {
+        for offset in offsets {
+            let trashItem = trashItems[offset]
+            modelContext.delete(trashItem)
+        }
+    }
 }
 
 #Preview {
     Log_Page()
+        .modelContainer(for: TrashItem.self, inMemory: true)
 }
