@@ -1,5 +1,5 @@
 //
-//  logPage.swift
+//  LogIn.swift
 //  EcoQuest
 //
 //  Created by Scholar on 8/13/25.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct logPage: View {
+struct LogIn: View {
     var body: some View {
-        Text("Log Page!")
+        Text("Log in to your account!!")
     }
 }
 
 #Preview {
-    logPage()
+    LogIn()
 }
