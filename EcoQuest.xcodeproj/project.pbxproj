@@ -6,7 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BD8F39D92E4BD34E003051C7 /* Log Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F39D82E4BD34E003051C7 /* Log Page.swift */; };
+		BD8F39DB2E4CFDD1003051C7 /* TrashItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F39DA2E4CFDD1003051C7 /* TrashItem.swift */; };
+		BD8F39E32E4D0697003051C7 /* NewTrashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F39E22E4D0697003051C7 /* NewTrashView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		BD8F39D82E4BD34E003051C7 /* Log Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Log Page.swift"; sourceTree = "<group>"; };
+		BD8F39DA2E4CFDD1003051C7 /* TrashItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashItem.swift; sourceTree = "<group>"; };
+		BD8F39E22E4D0697003051C7 /* NewTrashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrashView.swift; sourceTree = "<group>"; };
 		BD9E97FA2E4BBB6100D87007 /* EcoQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +41,9 @@
 		BD9E97F12E4BBB6100D87007 = {
 			isa = PBXGroup;
 			children = (
+				BD8F39DA2E4CFDD1003051C7 /* TrashItem.swift */,
+				BD8F39D82E4BD34E003051C7 /* Log Page.swift */,
+				BD8F39E22E4D0697003051C7 /* NewTrashView.swift */,
 				BD9E97FC2E4BBB6100D87007 /* EcoQuest */,
 				BD9E97FB2E4BBB6100D87007 /* Products */,
 			);
@@ -119,6 +131,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD8F39D92E4BD34E003051C7 /* Log Page.swift in Sources */,
+				BD8F39E32E4D0697003051C7 /* NewTrashView.swift in Sources */,
+				BD8F39DB2E4CFDD1003051C7 /* TrashItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
