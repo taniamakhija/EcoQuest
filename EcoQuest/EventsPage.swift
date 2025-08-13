@@ -17,18 +17,15 @@ struct EventsPage: View {
             
             
     ScrollView{
-        VStack{
+        VStack(){
+            
             ZStack(alignment: .top){
-                VStack(spacing: 0){
                 Image("b1")
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: .infinity)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: .infinity, height: 650)
+                    .ignoresSafeArea(edges: .top)
                 
-//                Spacer()
-                
-            } //Background Image
-            VStack{
                 Text("Events")
                     .font(.custom("Georgia", size: 50))
                     .font(.largeTitle)
@@ -37,19 +34,17 @@ struct EventsPage: View {
                     .multilineTextAlignment(.center)
                     .bold()
                     .padding(.top, 500)
-                
-            } // Events title
         } //title
-
-
-//            Spacer()
-//            
+            
+            
             ZStack(alignment: .top){
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 500.0, height: 700.0)
             }
+            
                 
-        }//end of vStack
+        }
+        .padding(.bottom, 0)//end of vStack
         
         .scrollTransition{content, phase in content
         .opacity(phase.isIdentity ? 1.0 :0.0)
