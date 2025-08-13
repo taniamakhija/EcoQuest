@@ -54,15 +54,10 @@ struct ContentView: View {
                 Spacer()
                 
                //log/scan page
-                NavigationLink(destination:
-                        Text("Log Page")
-                            .fontWeight(.semibold)
-                            .multilineTextAlignment(.center)
-                               
-                    .navigationTitle("Home")
-                    .navigationBarTitleDisplayMode(.inline)
-                
-                ) {
+                NavigationLink(){
+                    logPage()
+                }
+                label: {
                     Text("Log")
                         .font(.title2)
                         .multilineTextAlignment(.center)
@@ -95,15 +90,10 @@ struct ContentView: View {
                 
                 
                 //learn page
-                NavigationLink(destination:
-                        Text("Learn Page")
-                            .fontWeight(.semibold)
-                            .multilineTextAlignment(.center)
-                               
-                    .navigationTitle("Home")
-                    .navigationBarTitleDisplayMode(.inline)
-               
-                ) {
+                NavigationLink(){
+                    LearnPage()
+                }
+                label:{
                     Text("Learn")
                         .font(.title2)
                         .multilineTextAlignment(.center)
