@@ -9,33 +9,33 @@ import SwiftUI
 
 struct NewTrashView: View {
     @Binding var showNewTrash: Bool
-    @Bindable var trashItem: TrashItem
-    @Environment(\.modelContext) var modelContext
+    @Binding var newTrashTitle: String
+    var onSave: () -> Void
+
     var body: some View {
         VStack {
-            Text("Trash Item: ")
-                .font(.title)
-                .fontWeight(.bold)
-            TextField("Enter the trash item...", text: $trashItem.title, axis: .vertical)
+            TextField("Enter the trash item...", text: $newTrashTitle)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
-                .background(Color(.systemGroupedBackground))
-                .cornerRadius(15)
-                .padding()
+
             Button {
-                addTrash()
+                onSave()
                 showNewTrash = false
             } label: {
-                    Text("Save")
+                Text("Save")
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.green.opacity(0.8))
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
             }
+            .padding()
         }
         .padding()
-    }
-    func addTrash() {
-        let trash = TrashItem(title: trashItem.title)
-        modelContext.insert(trash)
     }
 }
 
 #Preview {
-    NewTrashView(showNewTrash: .constant(false), trashItem: TrashItem(title: ""))
+    NewTrashView(showNewTrash: .constant(true), newTrashTitle: .constant("")) { }
 }
