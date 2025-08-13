@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
     var body: some View {
         //create login and create account button
@@ -86,7 +88,7 @@ struct ContentView: View {
                         .shadow(radius: 5)
                         .foregroundColor(.black)
                         .padding()
-            }
+                }
                 
                 
                 //learn page
