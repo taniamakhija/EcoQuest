@@ -49,15 +49,17 @@ struct EventsPage: View {
                     .frame(width: 500.0, height: 700.0)
             }
                 
-        }.scrollTransition{content, phase in
-            content
-                .opacity(phase.isIdentity ? 1.0 :0.0)
-                .scaleEffect(x: phase.isIdentity ? 1.0 : 0.3,
-                             y: phase.isIdentity ? 1.0 : 0.3)
-                .offset(y: phase.isIdentity ? 0: 50)//end of scroll transition stuff
-        }//end of scroll stuff
-        //end of vStack
-    }.ignoresSafeArea(edges: .top) // end of scroll
+        }//end of vStack
+        .scrollTransition{content, phase in content
+        .opacity(phase.isIdentity ? 1.0 :0.0)
+        .scaleEffect(x: phase.isIdentity ? 1.0 : 0.3,
+                     y: phase.isIdentity ? 1.0 : 0.3)
+        .offset(y: phase.isIdentity ? 0: 50)
+        }//end of scroll transition stuff
+        
+    }// end of scroll
+            
+    .ignoresSafeArea(edges: .top)
 }
 }
 }

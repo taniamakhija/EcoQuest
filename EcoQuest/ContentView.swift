@@ -77,15 +77,10 @@ struct ContentView: View {
                 
                 
                 //event/organizations page
-                NavigationLink(destination:
-                        Text("Event Page")
-                            .fontWeight(.semibold)
-                            .multilineTextAlignment(.center)
-
-                    .navigationTitle("Home")
-                    .navigationBarTitleDisplayMode(.inline)
-               
-                ) {
+                NavigationLink(){
+                    EventsPage()
+                }
+                label:{
                     Text("Event")
                         .font(.title2)
                         .multilineTextAlignment(.center)
@@ -96,7 +91,8 @@ struct ContentView: View {
                         .shadow(radius: 5)
                         .foregroundColor(.black)
                         .padding()
-                }
+            }
+                
                 
                 //learn page
                 NavigationLink(destination:
