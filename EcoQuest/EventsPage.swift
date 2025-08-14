@@ -36,8 +36,8 @@ struct EventsPage: View {
                 Image("b1")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: .infinity, height: 650)
-                    .ignoresSafeArea(edges: .top)
+                    .frame(width: .infinity, height: 700)
+                    .ignoresSafeArea(edges: .all)
                 
                 Text("Events")
                     .font(.custom("Georgia", size: 50))
@@ -50,12 +50,22 @@ struct EventsPage: View {
             } //title
             .frame(height: 600.0)
             
-            
             ZStack(){
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 500.0, height: 400)
                     .opacity(0)
             }
+            
+            
+            VStack(spacing: 15) {
+                      ForEach(events) { event in
+                        EventCard(event: event)
+                      }
+                    } // end of VStack
+                    .padding(.bottom, 30)
+            
+            
+        
             
             
             
@@ -81,6 +91,32 @@ struct EventsPage: View {
         .toolbarBackground(.hidden, for: .navigationBar)
 }
 }
+
+struct EventCard: View {
+  let event: Event
+  var body: some View {
+    ZStack {
+      RoundedRectangle(cornerRadius: 15)
+        .fill(Color("White"))
+        .padding(.horizontal, 20)
+        
+        HStack {
+            Text(event.name)
+                .fontWeight(.bold)
+                .foregroundColor(.black)
+                .padding(.bottom, 15)
+            
+            Text(event.date)
+                .foregroundColor(.black)
+                .padding(.bottom, 15)
+            
+            
+            
+        }
+    } // end of ZStack
+  } // end of body
+} // end of LandmarkCard
+
 
 #Preview {
     EventsPage()
