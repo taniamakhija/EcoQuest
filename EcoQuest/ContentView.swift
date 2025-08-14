@@ -22,15 +22,23 @@ struct ContentView: View {
                     .padding()
                 
                 HStack{
-                    NavigationLink(destination: Text("Create An Account with us!!!")) {
-                        Text("Create Account")
+                    NavigationLink(){
+                        createAccount()
+                    }
+                    
+                    label: {
+                        Text("CreateAccount")
                             .multilineTextAlignment(.center)
                             .padding(8)
                             .background(Color.white.opacity(0.8))
                             .cornerRadius(8)
                     }
                         
-                    NavigationLink(destination: Text("Log in to your account!!")) {
+                    NavigationLink(){
+                        LogIn()
+                    }
+                    
+                    label: {
                         Text("Log in")
                             .multilineTextAlignment(.center)
                             .padding(8)
@@ -59,6 +67,7 @@ struct ContentView: View {
                 NavigationLink(){
                     LogPage()
                 }
+                
                 label: {
                     Text("Log")
                         .font(.title2)
