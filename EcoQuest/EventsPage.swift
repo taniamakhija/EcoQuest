@@ -30,62 +30,66 @@ struct EventsPage: View {
             
             
     ScrollView{
-        VStack{
-            
-            ZStack(alignment: .top){
-                Image("b1")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: .infinity, height: 700)
-                    .ignoresSafeArea(edges: .all)
+        ScrollView {
+            VStack(spacing: 70) {
                 
-                Text("Events")
-                    .font(.custom("Georgia", size: 50))
-                    .font(.largeTitle)
-                    .fontWeight(.thin)
-                    .foregroundColor(Color.white)
-                    .multilineTextAlignment(.center)
-                    .bold()
-                    .padding(.top, 650.0)
-            } //title
-            .frame(height: 600.0)
-            
-            ZStack(){
+                // First section
+                ZStack(alignment: .top) {
+                    Image("b1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .ignoresSafeArea(edges: .all)
+                    
+                    VStack {
+                        Spacer().frame(height: 200) // space before title
+                        
+                        Text("Events")
+                            .font(.custom("Georgia", size: 50))
+                            .fontWeight(.thin)
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                            .bold()
+                    }
+                }
+                .frame(height: 600)
+                .scrollTransition(.interactive, axis: .vertical) { content, phase in
+                    content
+                        .opacity(phase.isIdentity ? 1 : 0)
+                        .scaleEffect(phase.isIdentity ? 1 : 0.8)
+                        .animation(.easeOut(duration: 0.6), value: phase.isIdentity)
+                }
+                
+                // Spacer section
                 RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 500.0, height: 400)
+                    .frame(width: 80, height: 350)
                     .opacity(0)
-            }
-            
-            
-            VStack(spacing: 15) {
-                      ForEach(events) { event in
-                        EventCard(event: event)
-                      }
-                    } // end of VStack
-                    .padding(.bottom, 30)
-            
-            
-        
-            
-            
-            
-            
+                    .scrollTransition(.interactive, axis: .vertical) { content, phase in
+                        content
+                            .opacity(phase.isIdentity ? 1 : 0)
+                            .scaleEffect(phase.isIdentity ? 1 : 0.9)
+                            .animation(.easeOut(duration: 0.6).delay(0.2), value: phase.isIdentity)
+                    }
                 
+                // Events list
+                VStack(spacing: 15) {
+                    ForEach(events) { event in
+                        EventCard(event: event)
+                            .scrollTransition(.interactive, axis: .vertical) { content, phase in
+                                content
+                                    .opacity(phase.isIdentity ? 1 : 0)
+                                    .scaleEffect(phase.isIdentity ? 1 : 0.95)
+                                    .animation(.easeOut(duration: 0.4).delay(0.1 * Double(events.firstIndex(where: { $0.id == event.id }) ?? 0)), value: phase.isIdentity)
+                            }
+                    }
+                }
+                .padding(.bottom, 30)
+            }
+            .padding(.bottom, 2)
         }
-        .padding(.bottom, 2.0)//end of vStack
-        
-        .scrollTransition{content, phase in content
-        .opacity(phase.isIdentity ? 1.0 :0.0)
-        .scaleEffect(x: phase.isIdentity ? 1.0 : 0.3,
-                     y: phase.isIdentity ? 1.0 : 0.3)
-        .offset(y: phase.isIdentity ? 0: 50)
-            
-        }//end of scroll transition stuff
-        
-    }// end of scroll
-    .background(Color.clear)
-    .scrollContentBackground(.hidden)
-    .ignoresSafeArea(edges: .top)
+        .background(Color.clear)
+        .scrollContentBackground(.hidden)
+        .ignoresSafeArea(edges: .top)
 }
         .tint(.white)
         .toolbarBackground(.hidden, for: .navigationBar)
@@ -97,8 +101,11 @@ struct EventCard: View {
   var body: some View {
     ZStack {
       RoundedRectangle(cornerRadius: 15)
-        .fill(Color("White"))
-        .padding(.horizontal, 20)
+            .frame(width: UIScreen.main.bounds.width,
+                height: 500)
+            .foregroundColor(.white)
+            .opacity(0.50)
+            .padding(.horizontal, 100.0)
         
         HStack {
             Text(event.name)
