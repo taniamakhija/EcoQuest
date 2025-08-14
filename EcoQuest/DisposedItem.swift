@@ -9,10 +9,12 @@ import Foundation
 import SwiftData
 
 @Model
-class TrashItem {
+class DisposedItem {
     var title: String
+    var bin : String
     
-    init(title: String) {
+    init(title: String, bin : String) {
         self.title = title
+        self.bin = bin
     }
 }

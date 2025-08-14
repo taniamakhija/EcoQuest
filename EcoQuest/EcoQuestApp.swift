@@ -13,6 +13,6 @@ struct EcoQuestApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: TrashItem.self)
+        .modelContainer(for: DisposedItem.self)
     }
 }
