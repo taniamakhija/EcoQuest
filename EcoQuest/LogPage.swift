@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct Log_Page: View {
+struct LogPage: View {
     @State private var showTrash = false
     @State private var showRecycling = false
     @State private var showCompost = false
@@ -101,7 +101,7 @@ struct Log_Page: View {
                 .shadow(radius: 10)
             }
 
-            // NewTrashView popup (no dimmed background)
+            // NewTrashView popup
             if showNewTrash {
                 NewTrashView(showNewTrash: $showNewTrash, newTrashTitle: $newTrashTitle) {
                     let trash = TrashItem(title: newTrashTitle)
@@ -124,6 +124,6 @@ struct Log_Page: View {
 }
 
 #Preview {
-    Log_Page()
+    LogPage()
         .modelContainer(for: TrashItem.self, inMemory: true)
 }

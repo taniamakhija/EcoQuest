@@ -16,7 +16,7 @@ struct ContentView: View {
                 
         NavigationStack {
             VStack {
-                Text("Welcome to EcoQuest!")  //title
+                Text("Welcome to EcoQuest!!")  //title
                     .font(.title)
                     .fontWeight(.semibold)
                     .padding()
@@ -65,7 +65,7 @@ struct ContentView: View {
                 
                //log/scan page
                 NavigationLink(){
-                    logPage()
+                    LogPage()
                 }
                 
                 label: {
