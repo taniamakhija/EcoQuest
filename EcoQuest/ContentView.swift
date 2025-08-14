@@ -100,6 +100,7 @@ struct ContentView: View {
                 }
                 
                 
+                
                 //learn page
                 NavigationLink(){
                     LearnPage()
