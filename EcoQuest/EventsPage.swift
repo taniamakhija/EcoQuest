@@ -23,6 +23,7 @@ struct EventsPage: View {
     ]
     
     var body: some View {
+        NavigationStack {
             ZStack {
                 Image("color")
                     .resizable(resizingMode: .stretch)
@@ -89,8 +90,9 @@ struct EventsPage: View {
             .tint(.white)
             .toolbarBackground(.hidden, for: .navigationBar)
         }
+        .tint(.white)
     }
-
+    
     struct EventCard: View {
         let event: Event
         var body: some View {
@@ -117,12 +119,13 @@ struct EventsPage: View {
                         .foregroundColor(.black)
                         .padding(.horizontal, 100)
                         .font(.custom("Georgia", size: 20))
-
+                    
                 }
                 .padding(.horizontal, 50)
             }
         }
     }
+}
 
     #Preview {
         EventsPage()

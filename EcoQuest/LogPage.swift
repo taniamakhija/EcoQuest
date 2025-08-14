@@ -15,16 +15,24 @@ struct LogPage: View {
     
     var body: some View {
         ZStack {
+            Color("light green")
+                .ignoresSafeArea()
             VStack {
                 Text("Trash Logging")
-                    .font(.title)
-                    .fontWeight(.black)
-                
-                HStack {
-                    binButton(name:"Trash")
-                    binButton(name:"Recycling")
-                    binButton(name:"Compost")
-                }
+                    .font(.custom("Georgia", size: 50))
+                    .fontWeight(.thin)
+                    .multilineTextAlignment(.center)
+                    .bold()
+//                    .font(.title)
+//                    .fontWeight(.black)
+                Text("Click on the bins below to log your trash!")
+                    .font(.custom("Georgia", size: 20))
+                Spacer()
+            }
+            VStack {
+                binButton(name:"Trash")
+                binButton(name:"Recycling")
+                binButton(name:"Compost")
             }
             
             if let b = bin {
