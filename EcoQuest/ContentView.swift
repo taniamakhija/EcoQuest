@@ -65,7 +65,7 @@ struct ContentView: View {
                 
                //log/scan page
                 NavigationLink(){
-                    Log_Page()
+                    LogPage()
                 }
                 
                 label: {
