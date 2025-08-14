@@ -27,7 +27,7 @@ struct ContentView: View {
                     }
                     
                     label: {
-                        Text("CreateAccount")
+                        Text("Create Account")
                             .multilineTextAlignment(.center)
                             .padding(8)
                             .background(Color.white.opacity(0.8))
