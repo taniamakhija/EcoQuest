@@ -66,7 +66,8 @@ struct LogIn: View {
                         .foregroundColor(Color.blue)
                         .font(.footnote)
                 }
-
+                
+            
                 Spacer()
             }
             .padding(.horizontal, 30)
