@@ -35,6 +35,7 @@ struct ContentView: View {
                         createAccount()
                     } label: {
                         Text("Create Account")
+                            .font(.custom("Georgia", size: 15))
                             .foregroundColor(.white)
                             .padding(.horizontal, 20)
                             .padding(.vertical, 10)
@@ -48,6 +49,7 @@ struct ContentView: View {
                         LogIn()
                     } label: {
                         Text("Log In")
+                            .font(.custom("Georgia", size: 15))
                             .foregroundColor(.white)
                             .padding(.horizontal, 20)
                             .padding(.vertical, 10)
@@ -61,13 +63,13 @@ struct ContentView: View {
                     
                 
                 Text("EcoQuest is a community-driven app that makes sustainable living easy, engaging, and rewarding. Using AI-powered waste scanning, local event discovery, and bite-sized learning, we help you sort waste correctly, take action for the planet, and connect with other environmental changemakers. Every scan, event, and lesson earns you points toward rewards—turning eco-friendly habits into everyday wins for you and the Earth.")
-                    .font(.body)
-                    .fontWeight(.medium)
+                    .font(.custom("Georgia", size: 20))
                     .multilineTextAlignment(.center)
                     .padding()
                     .background(
-                        Capsule()
-                            .fill(Color.white.opacity(0.24))
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.white.opacity(0.30))
+                            .padding()
                     )
                     .padding()
                     
@@ -79,14 +81,14 @@ struct ContentView: View {
                     }
                     label: {
                         Text("Log")
-                            .font(.title2)
+                            .font(.custom("Georgia", size: 20))
                             .multilineTextAlignment(.center)
                             .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.white.opacity(0.9))
+                            .frame(maxWidth: 300)
+                            .background(Color.blue.opacity(0.50))
                             .cornerRadius(15)
                             .shadow(radius: 5)
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                             .padding()
                     }
                     
@@ -97,14 +99,14 @@ struct ContentView: View {
                     }
                     label:{
                         Text("Event")
-                            .font(.title2)
+                            .font(.custom("Georgia", size: 20))
                             .multilineTextAlignment(.center)
                             .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.white.opacity(0.9))
+                            .frame(maxWidth: 300)
+                            .background(Color.blue.opacity(0.50))
                             .cornerRadius(15)
                             .shadow(radius: 5)
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                             .padding()
                     }
                     
@@ -114,14 +116,14 @@ struct ContentView: View {
                     }
                     label:{
                         Text("Learn")
-                            .font(.title2)
+                            .font(.custom("Georgia", size: 20))
                             .multilineTextAlignment(.center)
                             .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.white.opacity(0.9))
+                            .frame(maxWidth: 300)
+                            .background(Color.blue.opacity(0.50))
                             .cornerRadius(15)
                             .shadow(radius: 5)
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                             .padding()
                         
                     }
