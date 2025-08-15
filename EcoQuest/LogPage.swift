@@ -17,23 +17,23 @@ struct LogPage: View {
         ZStack {
             Color("light green")
                 .ignoresSafeArea()
-            VStack {
+            VStack (spacing: 20){
                 Text("Trash Logging")
                     .font(.custom("Georgia", size: 50))
                     .fontWeight(.thin)
                     .multilineTextAlignment(.center)
                     .bold()
-//                    .font(.title)
-//                    .fontWeight(.black)
                 Text("Click on the bins below to log your trash!")
                     .font(.custom("Georgia", size: 20))
+                
                 Spacer()
             }
-            VStack {
-                binButton(name:"Trash")
-                binButton(name:"Recycling")
-                binButton(name:"Compost")
+            VStack(spacing: 30) {
+                binButton(name: "Trash", imageName: "trash")
+                binButton(name: "Recycling", imageName: "recycle")
+                binButton(name: "Compost", imageName: "compost")
             }
+            .padding(.top, 100)
             
             if let b = bin {
                 NewBinView(
@@ -54,13 +54,20 @@ struct LogPage: View {
             }
         }
     }
-    func binButton(name: String) -> some View {
+    
+    func binButton(name: String, imageName: String) -> some View {
         Button {
             bin = name
         } label: {
-            Text(name)
-                .font(.title)
-                .fontWeight(.bold)
+            VStack {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 120, height: 120) // Adjust as needed
+                Text(name)
+                    .font(.custom("Georgia", size: 15))
+                    .foregroundColor(.black)
+            }
         }
     }
 }
